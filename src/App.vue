@@ -1,10 +1,12 @@
 <script>
 
   import YugiohHeader from "./components/YugiohHeader.vue"
+  import CardsContainer from "./components/CardsContainer.vue"
 
   export default {
     components: {
       YugiohHeader,
+      CardsContainer
     }
 }
 
@@ -26,6 +28,7 @@
           <li><a class="dropdown-item" href="#">Hellraiser</a></li>
         </ul>
       </div>
+      <CardsContainer></CardsContainer>
     </div>
   </main>
 

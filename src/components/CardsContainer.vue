@@ -1,8 +1,27 @@
 <script>
 
-    export default {
+import axios from 'axios';
 
-    }
+export default {
+    data() {
+        return {
+            cards: [1,3,4]
+        }
+    },
+    methods: {
+        fetchCards() {
+            const url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0";
+
+            axios.get(url).then((response) => {
+                this.cards = response.data.data;
+            });
+
+        }
+    },
+    mounted() {
+        this.fetchCards()
+    },
+}
 
 </script>
 

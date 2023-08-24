@@ -38,7 +38,6 @@
   
   main {
     background-color: #D48F38;
-    height: 1000px;
 
     .btn{
       min-width: 120px;

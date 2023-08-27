@@ -4,7 +4,7 @@ import axios from "axios";
 export const store = reactive({
     archetypes : [],
     cards: [],
-    selectedArchetype: "",
+    selectPlaceholder: "Archetype"
 })
 
 export function fetchCards(nextUrl) {

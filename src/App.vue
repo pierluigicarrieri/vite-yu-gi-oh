@@ -32,7 +32,7 @@
     <div class="container">
       <div class="dropdown py-3">
         <a class="btn btn-light dropdown-toggle text-start" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Archetype
+          {{ store.selectPlaceholder }}
         </a>
         <ul class="dropdown-menu ">
           <li  v-for="archetype in store.archetypes">
@@ -52,6 +52,7 @@
   
   main {
     background-color: #D48F38;
+    padding-bottom: 30px;
 
     .btn{
       min-width: 120px;

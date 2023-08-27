@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <div class="cards-container p-4 bg-white">
+    <div class="cards-container p-4 bg-white rounded 1">
         <div class="cards-found-banner p-2 text-white bg-dark">Found 39 cards</div>
         <div class="row row-cols-5 g-4">
             <div class="col" v-for="card in store.cards" :key="store.cards.id">

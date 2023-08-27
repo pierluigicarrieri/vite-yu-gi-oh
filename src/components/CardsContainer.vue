@@ -1,6 +1,5 @@
 <script>
 
-import axios from 'axios'
 import CardGenerator from "./CardGenerator.vue"
 import { store, fetchCards } from "../store.js"
 

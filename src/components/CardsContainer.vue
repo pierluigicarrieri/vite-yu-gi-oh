@@ -1,7 +1,8 @@
 <script>
 
+import axios from 'axios'
 import CardGenerator from "./CardGenerator.vue"
-import axios from 'axios';
+import { store, fetchCards } from "../store.js"
 
 export default {
     components: {
@@ -9,22 +10,14 @@ export default {
     },
     data() {
         return {
-            cards: []
+            store,
         }
     },
     methods: {
-        fetchCards() {
-            const url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0";
 
-            axios.get(url).then((response) => {
-                this.cards = response.data.data;
-                console.log(this.cards)
-            });
-        },
     },
     mounted() {
-        this.fetchCards()
-        ;
+        fetchCards()
     },
 }
 
@@ -34,7 +27,7 @@ export default {
     <div class="cards-container p-4 bg-white">
         <div class="cards-found-banner p-2 text-white bg-dark">Found 39 cards</div>
         <div class="row row-cols-5 g-4">
-            <div class="col" v-for="card in cards" :key="cards.id">
+            <div class="col" v-for="card in store.cards" :key="store.cards.id">
                 <CardGenerator
                 :card="card"
                 >

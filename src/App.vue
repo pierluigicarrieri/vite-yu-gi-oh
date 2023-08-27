@@ -2,7 +2,7 @@
 
   import YugiohHeader from "./components/YugiohHeader.vue"
   import CardsContainer from "./components/CardsContainer.vue"
-  import { store, createSelect } from "./store.js"
+  import { store, fetchCards, createSelect } from "./store.js"
 
   export default {
     components: {
@@ -13,6 +13,9 @@
       return {
         store,
       }
+    },
+    methods: {
+      fetchCards
     },
     mounted() {
       createSelect()
@@ -33,7 +36,9 @@
         </a>
         <ul class="dropdown-menu ">
           <li  v-for="archetype in store.archetypes">
-            <a class="dropdown-item" href="#">{{ archetype.archetype_name }}</a>
+            <a class="dropdown-item" href="#" 
+            v-on:click="fetchCards(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${archetype.archetype_name}`)">
+            {{ archetype.archetype_name }}</a>
           </li>
         </ul>
       </div>
